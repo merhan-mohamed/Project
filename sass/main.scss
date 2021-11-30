@@ -1,0 +1,168 @@
+@import "./variables.scss";
+body {
+  font-family: "Trirong", serif;
+}
+section {
+  overflow-x: hidden;
+}
+.navbar-light {
+  .navbar-nav .nav-link {
+    position: relative;
+    transition: 0.3s;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 3px;
+      ṇkcolor: $blue;
+      transition: inherit;
+    }
+    &.active,
+    &:hover {
+      color: $blue;
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+}
+// End Navbar //
+
+// Header //
+#header {
+  height: 75vh;
+  background: url(../img/hero-bg.jpg) center center/cover;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: transparentize(#fff, 0.3);
+  }
+}
+//End of Header //
+//Modal //
+#exampleModal {
+  object {
+    height: 80vh;
+  }
+  &.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: scale(0);
+  }
+  &.show .modal-dialog {
+    transform: none;
+  }
+}
+//End Modal //
+//Utility//
+.bg-section {
+  background-color: #f6f9fe;
+  .title-before {
+    background-color: #e7f1fd;
+  }
+}
+//Icon Container //
+.icon-container {
+  height: 70px;
+  width: 70px;
+}
+//icon //
+.icon1 {
+  margin-bottom: 10px;
+}
+
+//progress//
+.progress-bar {
+  transition: 0.3s;
+}
+//counter //
+.icon {
+  height: 60px;
+  width: 60px;
+}
+
+//services//
+.icon-box {
+  .card-overlay {
+    inset: 0;
+  }
+  & > * {
+    position: relative;
+    transition: 0.5s;
+  }
+  &:hover {
+    .card-overlay {
+      top: 0 !important;
+    }
+    > * {
+      color: #fff !important;
+    }
+  }
+}
+
+//slider//
+.slider-div {
+  background: url(../img/testimonials/testimonials-bg.jpg) center center/cover;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: transparentize(#000000, 0.3);
+  }
+  #carouselExampleCaptions {
+    height: 350px;
+  }
+  .carousel-inner img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+//portfolio
+.filterd-items {
+  > a {
+    height: 350px;
+    &.hidden {
+      display: none;
+    }
+    &.active {
+      display: block;
+      animation: 0.7s shown ease-in-out;
+    }
+  }
+  img {
+    object-fit: contain;
+  }
+}
+@keyframes shown {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+//Contacts
+#Contact i {
+  height: 50px;
+  width: 50px;
+  border: 1px dashed;
+}
+//footer
+.footer-list li {
+  position: relative;
+  &::before {
+    position: absolute;
+    content: "";
+    border: 5px solid transparent;
+    border-left-color: $blue;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -20px;
+  }
+}
